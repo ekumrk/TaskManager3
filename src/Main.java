@@ -1,10 +1,10 @@
-import manager.TaskManager;
+import manager.InMemoryTaskManager;
 import tasks.*;
 
 public class Main {
     public static void main(String[] args) {
 
-        TaskManager taskManager = new TaskManager();
+        InMemoryTaskManager inMemoryTaskManager = new InMemoryTaskManager();
         Task task;
         Epic epic;
         Subtask subtask;
@@ -13,48 +13,48 @@ public class Main {
         //Тестирование
         //1. Создайте 2 задачи, один эпик с 2 подзадачами, а другой эпик с 1 подзадачей.
         task = new Task("Почитать", "Гарри Поттера");
-        taskManager.createNewTask(task);
+        inMemoryTaskManager.createNewTask(task);
         task = new Task("Отдохнуть", "Полежать на диване");
-        taskManager.createNewTask(task);
+        inMemoryTaskManager.createNewTask(task);
 
         epic = new Epic("Посмотреть летом", "фильмы");
-        taskManager.createNewEpic(epic);
+        inMemoryTaskManager.createNewEpic(epic);
         subtask = new Subtask("Гарри Поттер", "все части",3);
-        taskManager.createNewSubtask(subtask);
+        inMemoryTaskManager.createNewSubtask(subtask);
         subtask = new Subtask("Властелин колец", "все части", 3);
-        taskManager.createNewSubtask(subtask);
+        inMemoryTaskManager.createNewSubtask(subtask);
 
         epic = new Epic("Посетить культурные места","в разных городах");
-        taskManager.createNewEpic(epic);
+        inMemoryTaskManager.createNewEpic(epic);
         subtask = new Subtask("В Москве","Третьяковская галерея",6);
-        taskManager.createNewSubtask(subtask);
+        inMemoryTaskManager.createNewSubtask(subtask);
 
         System.out.println("Тест 2:");
         //2. Распечатайте списки эпиков, задач и подзадач
-        taskManager.getTaskList();
-        taskManager.getEpicList();
-        taskManager.getSubtaskList();
+        inMemoryTaskManager.getTaskList();
+        inMemoryTaskManager.getEpicList();
+        inMemoryTaskManager.getSubtaskList();
 
         System.out.println("Тест 3:");
         //3. Измените статусы созданных объектов, распечатайте.
         task = new Task("Почитать", "Гарри Поттера");
         task.setStatus("DONE");
-        taskManager.updateTask(task);
+        inMemoryTaskManager.updateTask(task);
         subtask = new Subtask("Властелин колец", "все части", 3);
-        taskManager.updateSubtask(subtask);
+        inMemoryTaskManager.updateSubtask(subtask);
 
-        taskManager.getTaskList();
-        taskManager.getEpicList();
-        taskManager.getSubtaskList();
+        inMemoryTaskManager.getTaskList();
+        inMemoryTaskManager.getEpicList();
+        inMemoryTaskManager.getSubtaskList();
 
         System.out.println("Тест 4:");
         //4. И, наконец, попробуйте удалить одну из задач и один из эпиков.
-        taskManager.deleteEpicFromId(6);
-        taskManager.deleteTaskFromId(2);
+        inMemoryTaskManager.deleteEpicFromId(6);
+        inMemoryTaskManager.deleteTaskFromId(2);
 
-        taskManager.getTaskList();
-        taskManager.getEpicList();
-        taskManager.getSubtaskList();
+        inMemoryTaskManager.getTaskList();
+        inMemoryTaskManager.getEpicList();
+        inMemoryTaskManager.getSubtaskList();
 
     }
 }
