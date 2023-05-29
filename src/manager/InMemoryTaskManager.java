@@ -13,18 +13,19 @@ public class InMemoryTaskManager implements TaskManager {
     private HashMap<Integer, Subtask> subtasks = new HashMap<>();
     private HashMap<Integer, Epic> epics = new HashMap<>();
 
-    private List<Task> viewsHistory = new ArrayList<>();
+    private HistoryManager historyManager = Managers.getDefaultHistory();
 
 
     public void putInHistory(Task task) {
-        if (viewsHistory.size() == 10) {
-            viewsHistory.remove(0);
+        if (historyManager.getHistory().size() == 10) {
+            historyManager.getHistory().remove(0);
         }
-        viewsHistory.add(task);
+        historyManager.getHistory().add(task);
     }
 
+    @Override
     public List<Task> getHistory() {
-        return viewsHistory;
+        return historyManager.getHistory();
         }
 
     @Override
@@ -41,8 +42,8 @@ public class InMemoryTaskManager implements TaskManager {
     }
 
     @Override
-    public ArrayList<Task> getTaskList() {
-        ArrayList<Task> taskArrayList = new ArrayList<>(tasks.values());
+    public List<Task> getTaskList() {
+        List<Task> taskArrayList = new ArrayList<>(tasks.values());
         return taskArrayList;
     }
 

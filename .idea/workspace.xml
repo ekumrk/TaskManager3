@@ -4,15 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f98488a9-dafb-4d33-b3c2-1c8fd5a10616" name="Changes" comment="Добавить интерфейс TaskMeneger">
-      <change afterPath="$PROJECT_DIR$/src/manager/Managers.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tasks/Status.java" afterDir="false" />
+    <list default="true" id="f98488a9-dafb-4d33-b3c2-1c8fd5a10616" name="Changes" comment="Выполнить тз 4 проекта">
+      <change afterPath="$PROJECT_DIR$/src/manager/HistoryManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/manager/InMemoryHistoryManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/manager/InMemoryTaskManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/manager/InMemoryTaskManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tasks/Epic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tasks/Epic.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tasks/Subtask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tasks/Subtask.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tasks/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tasks/Task.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/manager/Managers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/manager/Managers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/manager/TaskManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/manager/TaskManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,9 +20,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Enum" />
         <option value="Interface" />
         <option value="Class" />
-        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -125,7 +123,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685347778699</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Выполнить тз 4 проекта">
+      <created>1685350893808</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1685350893808</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -147,6 +152,7 @@
     <MESSAGE value="Снова обновить код" />
     <MESSAGE value="Снова обновить код+" />
     <MESSAGE value="Добавить интерфейс TaskMeneger" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавить интерфейс TaskMeneger" />
+    <MESSAGE value="Выполнить тз 4 проекта" />
+    <option name="LAST_COMMIT_MESSAGE" value="Выполнить тз 4 проекта" />
   </component>
 </project>
