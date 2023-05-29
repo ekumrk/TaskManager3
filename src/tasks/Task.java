@@ -4,7 +4,7 @@ public class Task {
     protected int id;
     protected String title;
     protected String content;
-    protected String status = "NEW";
+    protected Status status = Status.NEW;
 
     public Task (String title, String content) {
         this.title = title;
@@ -20,11 +20,11 @@ public class Task {
         this.id = id;
     }
 
-    public String getStatus() {
+    public Status getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(Status status) {
 
         this.status = status;
     }

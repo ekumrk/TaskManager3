@@ -1,7 +1,5 @@
 package tasks;
 
-import tasks.Task;
-
 import java.util.ArrayList;
 
 public class Epic extends Task {
@@ -16,7 +14,7 @@ public class Epic extends Task {
         return subtasksId;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(Status status) {
 
         this.status = status;
     }

@@ -38,7 +38,7 @@ public class Main {
         System.out.println("Тест 3:");
         //3. Измените статусы созданных объектов, распечатайте.
         task = new Task("Почитать", "Гарри Поттера");
-        task.setStatus("DONE");
+        task.setStatus(Status.DONE);
         inMemoryTaskManager.updateTask(task);
         subtask = new Subtask("Властелин колец", "все части", 3);
         inMemoryTaskManager.updateSubtask(subtask);
