@@ -11,10 +11,13 @@ public class InMemoryHistoryManager implements HistoryManager {
 
     @Override
     public List<Task> getHistory() {
-        return viewsHistory;
+        return new ArrayList<>(viewsHistory);
     }
     @Override
-    public void addTask(Task task) {
-        viewsHistory.add(task);
+    public void addToHistoryTask(Task task) {
+            if (viewsHistory.size() == 10) {
+                viewsHistory.remove(0);
+            }
+            viewsHistory.add(task);
     }
 }
