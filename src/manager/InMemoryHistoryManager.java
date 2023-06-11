@@ -20,4 +20,12 @@ public class InMemoryHistoryManager implements HistoryManager {
             }
             viewsHistory.add(task);
     }
+    @Override
+    public void remove(int id) {
+        for (Task t : viewsHistory) {
+            if (t.getId() == id) {
+                viewsHistory.remove(t);
+            }
+        }
+    }
 }
