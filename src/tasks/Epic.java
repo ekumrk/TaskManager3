@@ -18,6 +18,4 @@ public class Epic extends Task {
 
         this.status = status;
     }
-
-
 }

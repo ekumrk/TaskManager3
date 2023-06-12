@@ -2,30 +2,82 @@ package manager;
 
 import tasks.Task;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 public class InMemoryHistoryManager implements HistoryManager {
-    private List<Task> viewsHistory = new LinkedList<>();
+
+    private static class Node {
+        Task item;
+        Node next;
+        Node prev;
+
+        Node(Node prev,Task element, Node next) {
+            this.item = element;
+            this.next = next;
+            this.prev = prev;
+        }
+    }
+
+    final private Map<Integer, Node> viewsHistory = new HashMap<>();
+    Node first;
+    Node last;
+
+    @Override
+    public void addToHistoryTask(Task task) {
+        if (viewsHistory.containsKey(task.getId())) {
+            Node node = viewsHistory.get(task.getId());
+            removeNode(node);
+        }
+        linkLast(task);
+    }
 
     @Override
     public List<Task> getHistory() {
-        return new ArrayList<>(viewsHistory);
+        ArrayList<Task> list = new ArrayList<>();
+        Node current = first;
+        while (current != null) {
+            list.add(current.item);
+            current = current.next;
+        }
+        return list;
     }
-    @Override
-    public void addToHistoryTask(Task task) {
-            if (viewsHistory.size() == 10) {
-                viewsHistory.remove(0);
-            }
-            viewsHistory.add(task);
-    }
+
     @Override
     public void remove(int id) {
-        for (Task t : viewsHistory) {
-            if (t.getId() == id) {
-                viewsHistory.remove(t);
-            }
+        if (!viewsHistory.isEmpty()) {
+            Node node = viewsHistory.get(id);
+            removeNode(node);
+        }
+    }
+
+    void linkLast(Task task) {
+        final Node prevlast = last;
+        final Node newNode = new Node(prevlast, task, null);
+        last = newNode;
+        if (prevlast == null) {
+            first = newNode;
+        } else {
+            prevlast.next = newNode;
+        }
+    }
+
+    private void removeNode(Node node) {
+
+        if (first == node) {
+            first = node.next;
+            first.prev = null;
+            return;
+        }
+        if (last == node) {
+            last = node.prev;
+            last.next = null;
+            return;
+        }
+
+        if (node != null) {
+            node.next = node.next.next;
+            node.prev = node.prev.prev;
+            viewsHistory.remove(node.item.getId());
         }
     }
 }
